@@ -1,6 +1,6 @@
 // CAN msgs we care about
 #define MAZDA_LKAS          0x243
-#define MAZDA_CRZ_CTRL      0x21c
+#define MAZDA_CRZ_CTRL      0x21f
 #define MAZDA_CRZ_BTNS      0x09d
 #define MAZDA_STEER_TORQUE  0x240
 #define MAZDA_ENGINE_DATA   0x202
