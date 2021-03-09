@@ -126,7 +126,7 @@ class CarState(CarStateBase):
         ("LKAS_BLOCK", "STEER_RATE", 0),
         ("LKAS_TRACK_STATE", "STEER_RATE", 0),
         ("HANDS_OFF_5_SECONDS", "STEER_RATE", 0),
-        ("CRZ_EVENTS", "NONACC_ACTIVE", 0),
+        ("NONACC_ACTIVE", "CRZ_EVENTS", 0),
         ("STANDSTILL", "PEDALS", 0),
         ("BRAKE_ON", "PEDALS", 0),
         ("BRAKE_PRESSURE", "BRAKE", 0),
