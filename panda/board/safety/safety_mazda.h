@@ -174,7 +174,7 @@ static int mazda_fwd_hook(int bus, CAN_FIFOMailBox_TypeDef *to_fwd) {
     if (bus == MAZDA_MAIN) {
       bus_fwd = MAZDA_CAM;
     } else if (bus == MAZDA_CAM) {
-      if ((!op_on || !(addr == MAZDA_LKAS || addr == MAZDA_CAM_SETTINGS))) {
+      if (!(addr == MAZDA_LKAS || addr == MAZDA_CAM_SETTINGS)) {
         bus_fwd = MAZDA_MAIN;
       }
     } else {
