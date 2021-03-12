@@ -89,7 +89,7 @@ class CarState(CarStateBase):
     ret.steerWarning = cp.vl["STEER_RATE"]['HANDS_OFF_5_SECONDS'] == 1
 
     self.acc_active_last = ret.cruiseState.enabled
-
+    self.cam_settings = cp_cam.vl["CAM_SETTINGS"]
     self.cam_lkas = cp_cam.vl["CAM_LKAS"]
     ret.steerError = cp_cam.vl["CAM_LKAS"]['ERR_BIT_1'] == 1
 
@@ -186,3 +186,4 @@ class CarState(CarStateBase):
       ]
 
     return CANParser(DBC[CP.carFingerprint]['pt'], signals, checks, 2)
+
