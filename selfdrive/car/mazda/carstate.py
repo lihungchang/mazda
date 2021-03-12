@@ -166,23 +166,20 @@ class CarState(CarStateBase):
     checks = []
 
     if CP.carFingerprint in GEN1:
-      signals += [
-        # sig_name, sig_address, default
-        ("LKAS_REQUEST",     "CAM_LKAS", 0),
-        ("CTR",              "CAM_LKAS", 0),
-        ("ERR_BIT_1",        "CAM_LKAS", 0),
-        ("LINE_NOT_VISIBLE", "CAM_LKAS", 0),
-        ("LDW",              "CAM_LKAS", 0),
-        ("BIT_1",            "CAM_LKAS", 1),
-        ("ERR_BIT_2",        "CAM_LKAS", 0),
-        ("STEERING_ANGLE",   "CAM_LKAS", 0),
-        ("ANGLE_ENABLED",    "CAM_LKAS", 0),
-        ("CHKSUM",           "CAM_LKAS", 0),
+      signals = [
+        ("LKAS_SENSETIVITY",      "CAM_SETTINGS", 1),
+        ("WARNING",               "CAM_SETTINGS", 0),
+        ("NEW_SIGNAL_1",          "CAM_SETTINGS", 0),
+        ("LKAS_ASSIT_TIMING",     "CAM_SETTINGS", 0),
+        ("NEW_SIGNAL_2",          "CAM_SETTINGS", 0),
+        ("LKAS_INERVENTION_ON1",  "CAM_SETTINGS", 1),
+        ("LANEE_DEPARTURE_ALERT", "CAM_SETTINGS", 2),
+        ("ILKAS_NTERVENTION_ON2", "CAM_SETTINGS", 1),
+        ("SBS_WARNING_DISTANCE",  "CAM_SETTINGS", 2),
+        ("SBS_SCBC",              "CAM_SETTINGS", 2),
       ]
-
-      checks += [
-        # sig_address, frequency
-        ("CAM_LKAS",      16),
+      checks = [
+          ("CAM_SETTINGS", 10),
       ]
 
     return CANParser(DBC[CP.carFingerprint]['pt'], signals, checks, 2)
