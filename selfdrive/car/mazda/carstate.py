@@ -16,6 +16,7 @@ class CarState(CarStateBase):
     self.acc_active_last = False
     self.low_speed_alert = False
     self.lkas_allowed_speed = False
+    self.lkas_disabled = False
 
   def update(self, cp, cp_cam):
 
@@ -82,6 +83,8 @@ class CarState(CarStateBase):
         self.low_speed_alert = True
       else:
         self.low_speed_alert = False
+
+    self.lkas_disabled =  cp.vl["CAM_LANEINFO"]["LANE_LINES"] == 0
 
     # Check if LKAS is disabled due to lack of driver torque when all other states indicate
     # it should be enabled (steer lockout). Don't warn until we actually get lkas active
