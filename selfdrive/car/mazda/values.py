@@ -36,7 +36,7 @@ class Buttons:
 
 
 FW_VERSIONS = {
-  CAR.CX5_2022 : {
+  CAR.CX5 : {
     (Ecu.eps, 0x730, None): [
       b'KSD5-3210X-C-00\x00\x00\x00\x00\x00\x00\x00\x00\x00',
     ],
@@ -57,12 +57,14 @@ FW_VERSIONS = {
       b'PYB2-21PS1-H\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00',
     ],
   },
-  CAR.CX5: {
+  CAR.CX5_2022: {
     (Ecu.eps, 0x730, None): [
       b'KJ01-3210X-G-00\x00\x00\x00\x00\x00\x00\x00\x00\x00',
       b'KJ01-3210X-J-00\x00\x00\x00\x00\x00\x00\x00\x00\x00',
       b'KJ01-3210X-M-00\x00\x00\x00\x00\x00\x00\x00\x00\x00',
       b'K319-3210X-A-00\x00\x00\x00\x00\x00\x00\x00\x00\x00',
+      # CX-5 2022 EPS
+      b'KSD5-3210X-C-00\x00\x00\x00\x00\x00\x00\x00\x00\x00',
     ],
     (Ecu.engine, 0x7e0, None): [
       b'PA53-188K2-A\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00',
