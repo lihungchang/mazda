@@ -10,7 +10,7 @@ SshControl::SshControl() : ButtonControl("SSH Keys", "", "Warning: This grants S
   hlayout->insertWidget(1, &username_label);
 
   QObject::connect(this, &ButtonControl::clicked, [=]() {
-    if (text() == "ADD") {
+    if (text() == "新增") {
       QString username = InputDialog::getText("Enter your GitHub username", this);
       if (username.length() > 0) {
         setText("LOADING");
